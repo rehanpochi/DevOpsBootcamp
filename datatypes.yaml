@@ -1,0 +1,35 @@
+no: 12
+marks: 22.3
+---
+cities:
+ - bangalore
+ - surat
+ - pune
+
+cities: [bangalore,pune,surat]
+---
+"apple" : "I am red"
+"22" : Rollno
+
+#how to write in two line
+bio:
+ hey how are you?
+ My name is xyx
+
+#specifying data type
+no: !!int 23
+booleanValue: !!bool yes #YES,Yes,y
+message: !!str "helloWorld"
+n: !!null NULL #null,~,Null
+
+#types to assign string value
+abc: rehan pochi
+xyz: "rehan pochi"
+pqr: 'rehan pochi'
+
+
+
+
+
+
+...
