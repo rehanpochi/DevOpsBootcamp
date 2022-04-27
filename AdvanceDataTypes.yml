@@ -1,0 +1,80 @@
+#Advance data types
+
+#Sequence
+student: !!seq
+  - name
+  - age
+  - gender
+# or it can be stored like this 
+student: !!seq [name,age,gender]
+
+#Some of the keys will be empty
+#Sparse sequence
+student: 
+ - name
+ - null
+ -
+ - age
+
+#Nested sequence
+student:
+-
+ - name
+ - age
+ - gender
+- 
+ - apple
+ - banana
+
+#Key value pairs are called maps
+!!map 
+#Nested maps
+vehicle: cars
+blueCars: 
+ ferrari: 22
+ bentley: 14
+ omni: 15
+
+#pairs:key may have duplicate values
+# !!pairs
+pair example: !!pairs
+ - job: student
+ - job: teacher
+#This will be in the form of array of hashtables 
+#same as
+pair example: !!pairs [job: student,job: teacher]
+
+#Set will allow you to have uniques values   
+names: !!set
+ ? rehan
+ ? adnan 
+ ? rahul
+#Cant have same names in set
+
+#Dictionary data type !!omap
+people: !!omap
+ - rahul :
+    age: 21
+    gender: male
+    height: 123
+ - disha:
+    age: 22    
+    gender: female
+    height: 122
+#Reusing some properties using anchors
+Personlikes: &likes
+ favFruit: mango
+ favCar: benz
+
+person1: 
+ name: Rahul
+ <<: *likes
+
+person2: 
+ name: Rehan
+ <<: *likes
+ favCar: toyota
+
+
+
+...
